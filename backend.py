@@ -388,7 +388,7 @@ class MiaryZmi(tkinter.Tk):
             self.Wyniki = []
 
             war = float(np.nanvar(selected_data.iloc[:, x]))
-            odch_s = np.nanstd(selected_data.iloc[:, x1])
+            odch_s = np.nanstd(selected_data.iloc[:, x])
             suma = 0
             for i in range(selected_data.shape[0]):
                 suma = suma + mat.fabs(selected_data.iloc[i, x] - np.nanmean(selected_data.iloc[:, x]))
