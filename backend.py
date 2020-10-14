@@ -527,22 +527,22 @@ def corelation():
 
 
 def kow():
-    corr = selected_data.cov()
+    cov = selected_data.cov()
 
     okno = Toplevel()
 
     okno.title("Macierz Kowariancji")
 
-    for x in range(len(list(corr.columns))):
+    for x in range(len(list(cov.columns))):
 
-        for y in range(len(list(corr.columns))):
+        for y in range(len(list(cov.columns))):
             okno.b2 = tkinter.Text(okno, width=10, height=1)
-            okno.b2.insert('end', corr.iloc[x, y])
+            okno.b2.insert('end', cov.iloc[x, y])
             okno.b2.config(state="disabled")
             okno.b2.grid(row=y + 2, column=x + 2)
 
-    tworzenie_tabel_w_petli(list(corr.columns), okno, poziom='True')
-    tworzenie_tabel_w_petli(list(corr.columns), okno, poziom='False')
+    tworzenie_tabel_w_petli(list(cov.columns), okno, poziom='True')
+    tworzenie_tabel_w_petli(list(cov.columns), okno, poziom='False')
 
 
 def kor_sper():
@@ -636,19 +636,19 @@ def draw_graph(graph, x, y, e1, e2, e3):
     tkinter.mainloop()
 
 
-def wykres_korelacji():
-
-    rysuj = tkinter.Toplevel()
+def mapa_korelacji():
 
     corr = selected_data.corr()
 
+    rysuj = tkinter.Toplevel()
+
     fig, ax = plt.subplots(figsize=(10, 10))
 
-    ax.set_title("Wykres koreacji", fontsize=16)
+    ax.set_title("Mapa cieplna korelacji", fontsize=16)
 
     sns.heatmap(data=corr, square=True, annot=True, cbar=True)
 
-    canvas = FigureCanvasTkAgg(fig, master=rysuj)  # A tk.DrawingArea.
+    canvas = FigureCanvasTkAgg(fig, master=rysuj)
     canvas.draw()
     canvas.get_tk_widget().pack()
 

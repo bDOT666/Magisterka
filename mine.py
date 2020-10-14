@@ -134,7 +134,7 @@ ram2_trzy = LabelFrame(tab2, text='Zależności zmienych')
 t2_r4_b1 = Button(ram2_trzy, text='Korelacja Pearsona', state=NORMAL, command=corelation)
 t2_r4_b2 = Button(ram2_trzy, text='Korelacja Spearmana', state=NORMAL, command=kor_sper)
 t2_r4_b3 = Button(ram2_trzy, text='Macierz kowariancji', state=NORMAL, command=kow)
-t2_r4_b4 = Button(ram2_trzy, text='Mapa cieplna korelacji', state=NORMAL, command=wykres_korelacji)
+t2_r4_b4 = Button(ram2_trzy, text='Mapa cieplna korelacji', state=NORMAL, command=mapa_korelacji)
 t2_r4_b5 = Button(ram2_trzy, text='Korelogram', state=NORMAL, command=wykres_relacji)
 
 
